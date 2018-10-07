@@ -1,3 +1,4 @@
+$(document).ready(function() { //wrapping in all in this onready function
 //======DECLARING GLOBAL VARIABLES======================
 //creating winsTotal variable
 let winsTotal = 0;
@@ -11,6 +12,10 @@ let button2 = 0;
 let button3 = 0;
 let button4 = 0;
 
+
+//creating variable for userScore
+let userScore=0;
+
 //======DECLARING GLOBAL FUNCTIONS======================
 
 //function that generates a random number between a min and max
@@ -23,9 +28,10 @@ function getRandomInt(min, max) {
 //fuction setting the goalScore to a random integer 19 thru 120
 function setGoalScore() {
     goalScore=getRandomInt(19,121);
+    $( '#computerNumber').text(goalScore); // prints the goalscore to the page
 }
 
-let userScore=0;
+
 
 //function that adds button values to userScore; this doesn't work correctly
 function scoreAdder(x) {
@@ -44,25 +50,34 @@ function setButtons() {
     button4=getRandomInt(1,13);
     console.log("Button 4:" + button4); //for debugging purposes
 }
+//resets the game when needed
+function initializeGame () {
+    setGoalScore();
+    setButtons();
+}
 
+//GAME PLAY
+initializeGame();
 
+//create the onclick listeners for the bottons
+//for button1
+$( '#button1').on("click", function(){
+    alert("You clicked Button1 "+ button1);
+})
 
+//for button2
+$( '#button2').on("click", function(){
+    alert("You clicked Button2 "+ button2);
+})
 
-//==========PLAYING AROUND=====================================
-//call setGoalScore
-setGoalScore();
+//for button3
+$( '#button3').on("click", function(){
+    alert("You clicked Button3 "+ button3);
+})
 
-//call setButtons
-setButtons();
+//for button4
+$( '#button4').on("click", function(){
+    alert("You clicked Button4 "+ button4);
+})
 
-//printing the goalScore to the screen
-document.getElementById("computerNumber").innerHTML = goalScore; 
-
-
-
-//prints winsTotal
-document.getElementById("totalWins").innerHTML = "Wins: " + winsTotal;
-
-//prints lossesTotal
-document.getElementById("totalLosses").innerHTML = "Losses: " + lossesTotal;
-
+}) //end of the onready function wrap
