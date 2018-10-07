@@ -1,4 +1,4 @@
-$(document).ready(function() { //wrapping in all in this onready function
+$(document).ready(function() { //wrapping all of this in this onready function
 //======DECLARING GLOBAL VARIABLES======================
 //creating winsTotal variable
 let winsTotal = 0;
@@ -32,13 +32,6 @@ function setGoalScore() {
 }
 
 
-
-//function that adds button values to userScore; this doesn't work correctly
-function scoreAdder(x) {
-    userScore = userScore + x;
-    console.log(userScore);
-}
-
 //function the sets the value of the buttons
 function setButtons() {
     button1=getRandomInt(1,13);
@@ -51,10 +44,12 @@ function setButtons() {
     //console.log("Button 4:" + button4); //for debugging purposes
 }
 
+//prints the user Score to the screen
 function printUserScore () {
     $( '#userScore').text(userScore);
 }
 
+//prints the Score Board to the screen
 function printScoreBoard () {
     $( '#totalWins' ).text("Wins: " + winsTotal );
     $( '#totalLosses' ).text("Losses: " + lossesTotal );
@@ -66,12 +61,11 @@ function initializeGame () {
     setButtons();
     userScore=0;
     printUserScore();
-    printScoreBoard();
-    
+    printScoreBoard();  
 }
 
 
-
+//checks if the user has yet won or lost the game. Iterates if so, and resets the game
 function checkifWon() {
     if (userScore > goalScore) {
         lossesTotal++;
@@ -85,7 +79,7 @@ function checkifWon() {
 //--------GAME PLAY----------------------
 initializeGame();
 
-//create the onclick listeners for the bottons
+//the onclick listeners for the bottons
 //for button1
 $( '#button1').on("click", function(){
     //alert("You clicked Button1 "+ button1); //for debugging
