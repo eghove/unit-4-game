@@ -5,7 +5,7 @@ body {
 
 /*Styling the title box */
 #titleBox {
-    background-color: orange;
+    background-color: #71eeb8;
     height: 75px;
 }
 
@@ -16,7 +16,7 @@ body {
 
 /*Styling the box with the rules */
 #ruleBox {
-    background-color: peachpuff;
+    background-color: #71eeb8;
 }
 
 /*Styling the text explaining the rules */
@@ -31,7 +31,7 @@ body {
 
 /*Styling the goal box */
 #goalScoreBox{
-    background-color: darkgreen;
+    background-color: #13a064;
 }
 
 /*Styling the goal score number */
@@ -41,7 +41,7 @@ body {
 
 /*Styles the winLossBox */
 #winLossBox {
-    background-color: teal;
+    background-color: #13a064;
 }
 
 /*Styles the win/loos text */
@@ -51,13 +51,16 @@ body {
 
 /*Styles that apply to all crystal buttons */
 .crystalButtons {
-    background-color: blue;
-    height: 50px;
     margin-right: 5px;
 }
 
 /*Styles both boxes at the bottom of the page */
 .userBox {
-    background-color: red;
+    background-color: #e73782;
     color: white;
+}
+
+img {
+    width: 100%;
+    height: 75%;
 }
